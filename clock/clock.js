@@ -6,7 +6,10 @@ var canvas = document.getElementById('canvas'),
     HOUR_HAND_TRUNCATION = canvas.width/10,
     NUMERAL_SPACING = 20,
     RADIUS = canvas.width/2 - MARGIN,
-    HAND_RADIUS = RADIUS + NUMERAL_SPACING;
+    HAND_RADIUS = RADIUS + NUMERAL_SPACING,
+    snapshotButton = document.getElementById('snapshot-button'),
+    snapshotImageElement = document.getElementById('snapshot-image-element'),
+    loop;
 
 // Functions .....
 
@@ -69,6 +72,25 @@ function drawClock(){
     drawHands();
     drawNumerals();
 }
+
+snapshotButton.onclick = function(e){
+    var datarUrl;
+
+    if (snapshotButton.value === 'Take snapshot'){
+        dataUrl = canvas.toDataURL();
+        clearInterval(loop);
+        snapshotImageElement.src = dataUrl;
+        snapshotImageElement.style.display = 'inline';
+        canvas.style.display = 'none';
+        snapshotButton.value = 'Return to Canvas';
+    }
+    else{
+        canvas.style.display = 'inline';
+        snapshotImageElement.style.display = 'none';
+        loop = setInterval(drawClock, 1000);
+        snapshotButton.value = 'Take snapshot';
+    }
+};
 
 // Initialization .....
 

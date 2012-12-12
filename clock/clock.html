@@ -6,19 +6,23 @@
                 background: #ddd;
             }
 
-            #canvas{
-                margin: 0 auto;
-                width: 500px;
-                height: 500px;
-                left: 0px;
-                top: 20px;
-                background: #fff;
-                border: thin inset rgba(100, 150, 230, 0.5);
+            #canvas, #snapshot-image-element{
+                position: absolute;
+                left: 10px;
+                top: 1.5em;
+                margin: 20px;
+                border: thin solid #aaa;
             }
         </style>
     </head>
 
     <body>
+        <div id="controls">
+            <input id="snapshot-button" type="button" value="Take snapshot">
+        </div>
+
+        <img id="snapshot-image-element">
+        
         <canvas id="canvas" width="500" height="500">
             Canvas not supported
         </canvas>
