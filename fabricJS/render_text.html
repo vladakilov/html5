@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Text Rendering Example</title>
+        <meta charset="utf-8">
+        <script src="fabric.js"></script>
+        <script src="Delicious_500.font.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <!--[if IE]><script type="text/javascript" src="excanvas/excanvas.js"></script><![endif]-->
+        <style type="text/css">
+            #wrapper{
+                margin: 0 auto;
+                width: 960px;
+                border: 1px solid #999;
+                padding: 5px;
+                overflow: hidden;
+            }
+            #content{
+                float:left;
+            }
+            #canvas{
+                width:800px;
+                height:450px;
+                overflow:hidden;
+                float:left;
+            }
+            #canvas-drop-area{
+                display:none;
+                position: absolute;
+                top:15px;
+                width:800px;
+                height:450px;
+                background:transparent;
+            }
+            #image-list{
+                margin: 0px;
+                padding: 0px;
+                float:right;
+                width:150px;
+            }
+            #image-list li{
+                list-style: none;
+                overflow: hidden;
+                margin-bottom: 10px;
+                border: 2px dashed #000;
+                cursor:move;
+            }
+            .draggable-image{
+                width: 150px;
+                max-height: 175px;
+                float:left;
+            }
+
+
+            #sample{
+                width: 300px;
+                height: 300px;
+                border: 1px solid #333;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <div id="content">
+                <canvas id="canvas" width="800" height="450" style="border:1px solid #000000">
+                    Canvas not supported in your browser!
+                </canvas>
+
+                <div id="canvas-drop-area"></div>
+
+                <textarea id="text-input"></textarea>
+
+                <button id="create-text-obj">Go</button>
+                <button id="save-as-image">Save as Image</button>
+            </div>
+
+            <ul id="image-list">
+                <li><img src="vader.png" class="draggable-image" draggable="true"></li>
+                <li><img src="Chewie19BBY-CVD.jpg" class="draggable-image" draggable="true"></li>
+                <li><img src="vader.png" class="draggable-image" draggable="true"></li>
+                <li><img src="vader.png" class="draggable-image" draggable="true"></li>
+            </ul>
+
+        </div>
+
+        <script src="main.js"></script>
+        </body>
+</html>
