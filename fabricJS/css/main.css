@@ -1,0 +1,49 @@
+#wrapper{
+    margin: 0 auto;
+    width: 960px;
+    border: 1px solid #999;
+    padding: 5px;
+    overflow: hidden;
+}
+#content{
+    float:left;
+}
+#canvas{
+    width:800px;
+    height:450px;
+    overflow:hidden;
+    float:left;
+    border:1px solid #000000;
+}
+#canvas-drop-area{
+    display:none;
+    position: absolute;
+    top:14px;
+    width:800px;
+    height:450px;
+    background:transparent;
+}
+
+#canvas-drop-area.active{
+    display:block;
+    border: 1px solid red;
+}
+
+#image-list{
+    margin: 0px;
+    padding: 0px;
+    float:right;
+    width:150px;
+}
+#image-list li{
+    list-style: none;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 2px dashed #000;
+    cursor:move;
+}
+.draggable-image{
+    width: 150px;
+    max-height: 175px;
+    float:left;
+}
